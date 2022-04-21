@@ -6,8 +6,7 @@ document.getElementById('trigger').addEventListener('click', trigger)
 
 //global variable for the index which increases if conditions aren't met
 let index = 0
-let spanChamberGlobal;
-spinChamber()
+let spanChamberGlobal = undefined
 
 function spinChamber(){ 
     let chamber = ['BANG!', 'Click...', 'Click...', 'Click...', 'Click...', 'Click...']
@@ -26,7 +25,10 @@ function spinChamber(){
 //function that iterates through the chambers index and checks weather the current index contains the bullet
 function trigger(){
 let chamber = spanChamberGlobal
-if(chamber[index] == 'Click...'){
+if(chamber == undefined){
+    console.log('reload chamber')
+}
+else if(chamber[index] == 'Click...'){
     console.log('ooof')
     console.log(chamber)
     index++
