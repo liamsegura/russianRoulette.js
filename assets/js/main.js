@@ -7,6 +7,7 @@ document.getElementById('trigger').addEventListener('click', trigger)
 //global variable for the index which increases if conditions aren't met
 let index = 0
 let spanChamberGlobal = undefined
+document.getElementById('text').innerHTML = ""
 
 function spinChamber(){ 
     let chamber = ['BANG!', 'Click...', 'Click...', 'Click...', 'Click...', 'Click...']
@@ -17,7 +18,7 @@ function spinChamber(){
          .sort((a, b) => a.sort - b.sort)
         //unmap to get the original objects 
          .map(({ value }) => value)
-         console.log('Chamber loaded and spun')
+         document.getElementById('text').innerHTML = 'Chamber loaded and spun'
          console.log(spunChamber)
          spanChamberGlobal = spunChamber
     }
@@ -26,15 +27,15 @@ function spinChamber(){
 function trigger(){
 let chamber = spanChamberGlobal
 if(chamber == undefined){
-    console.log('Load chamber')
+    document.getElementById('text').innerHTML = 'Load chamber'
 }
 else if(chamber[index] == 'Click...'){
-    console.log('Click...')
+    document.getElementById('text').innerHTML = chamber[index]
     console.log(chamber)
     index++
 }
 else{
-    console.log('BANG!')
+    document.getElementById('text').innerHTML = chamber[index]
     console.log(chamber)
     index = 0
     spanChamberGlobal = undefined
