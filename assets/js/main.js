@@ -17,7 +17,7 @@ function spinChamber(){
          .sort((a, b) => a.sort - b.sort)
         //unmap to get the original objects 
          .map(({ value }) => value)
-         console.log('chamber spun')
+         console.log('Chamber loaded and spun')
          console.log(spunChamber)
          spanChamberGlobal = spunChamber
     }
@@ -26,16 +26,18 @@ function spinChamber(){
 function trigger(){
 let chamber = spanChamberGlobal
 if(chamber == undefined){
-    console.log('reload chamber')
+    console.log('Load chamber')
 }
 else if(chamber[index] == 'Click...'){
-    console.log('ooof')
+    console.log('Click...')
     console.log(chamber)
     index++
 }
 else{
-    console.log('dead')
+    console.log('BANG!')
     console.log(chamber)
     index = 0
+    spanChamberGlobal = undefined
+
 }
 }
