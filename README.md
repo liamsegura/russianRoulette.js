@@ -1,7 +1,9 @@
 # russianRoulette.js
 Russian roulette using a randomly shuffled array chamber
 
-Check it out here: https://russianrouletterandomize.netlify.app
+Check it out here: 
+
+https://russianrouletterandomize.netlify.app
 Open the console to see how the array is stored.
 
 After looking around, I was unable to find this being correctly made using a randomly generated array as the chamber, rather than at the click of a button: give a random number between 6...
